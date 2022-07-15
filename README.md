@@ -1,2 +1,2 @@
-# muccapp
+# mucapp
 Social Media Site
