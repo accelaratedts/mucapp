@@ -1,17 +1,21 @@
-import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import SharedLayout from './Layout/SharedLayout';
-import Feeds from './Pages/Feeds';
-const App = () => {
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
+import Rightbar from "./components/Rightbar";
+import Navbar from "./components/Navbar";
+import { Box, Stack } from "@mui/material";
+
+
+function App() {
   return (
-   <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<SharedLayout/>}>
-        <Route index element={<Feeds/>}/>
-      </Route>
-    </Routes>
-   </BrowserRouter>
-  )
+   <Box sx={ {backgroundColor:"grey"} }>
+  <Navbar/>
+    <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar/>
+          <Feed/>
+        <Rightbar/>
+        </Stack>
+   </Box>
+  );
 }
 
 export default App
